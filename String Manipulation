@@ -1,0 +1,61 @@
+import java.util.Scanner;
+import java.text.DecimalFormat;
+
+public class assignment1
+{
+   static final int MIN_HOURS = 12;
+   static final int MAX_HOURS = 20;
+   static DecimalFormat df1 = new DecimalFormat(".#");
+
+   public static void main(String[] args)
+   {
+      // declare variables
+      String userFirstName;
+      String userLastName;
+      String userFullName;
+      String lowerName;
+      String upperName;
+      int nameLen;
+      
+      // get user first and last name
+      Scanner scan = new Scanner(System.in);
+      System.out.println("Please enter your first name (capitalize the first letter): ");
+      userFirstName = scan.next();
+
+      System.out.println("Please enter your last name (capitalize the first letter): ");
+      userLastName = scan.next();
+
+      userFullName = userFirstName + " " + userLastName;
+      System.out.println("User full name: " + userFullName);
+
+      // get length of username
+      // -1 for the space in the name
+      nameLen = userFullName.length() - 1;
+      System.out.println("There are " + nameLen + " letters in your name ");
+
+      // lower case
+      lowerName = userFullName.toLowerCase();
+      System.out.println("Name in lower case: " + lowerName);
+
+      // upper case
+      upperName = userFullName.toUpperCase();
+      System.out.println("Name in upper case: " + upperName);
+
+      
+      // *******Part 2*****//
+      System.out.println("Range of hours: " + MIN_HOURS + " - " + MAX_HOURS);
+
+      // get user hours
+      System.out.println("Enter hours spent on this class(up to 3 decimal points): ");
+      Scanner s = new Scanner(System.in);
+      double input = s.nextDouble();
+
+      // round users hours to 1 decimal
+      String formatInput = df1.format(input);
+
+      // display rounded time
+      System.out.println("Rounded time: " + formatInput);
+
+   }
+}
+
